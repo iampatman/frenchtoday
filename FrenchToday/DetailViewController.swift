@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+class DetailViewController: UIViewController {
+
+	
+	@IBOutlet weak var content: UILabel!
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 

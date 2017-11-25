@@ -21,12 +21,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		}
 	}
 	
-	var manager = DictionaryManager.getInstance()
+	var dataManager = DataManager.getInstance()
 	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		currentWord = manager.getRandomWord()
+		currentWord = dataManager.getRandomWord()
+		extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+		
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,5 +45,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		meaning.text = newWord.meaning
         completionHandler(NCUpdateResult.newData)
     }
+	
+	
+	func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+		let expanded = activeDisplayMode == .expanded
+		preferredContentSize = expanded ? CGSize(width: maxSize.width, height: 200) : maxSize
+	}
     
 }
