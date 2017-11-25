@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
 
 	
 	@IBOutlet weak var content: UILabel!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -24,6 +25,12 @@ class DetailViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+	
+	@IBAction func refreshManually(){
+		UIView.animate(withDuration: 0.3) {
+			self.content.text = "Your resized app icons for iOS and Android are attached with this email; I hope you like it."
+		}
+	}
 
 }
 

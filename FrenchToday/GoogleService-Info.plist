@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>84754273921-rekolfr206o17arh3v8nu1jfesrk7qhr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.84754273921-rekolfr206o17arh3v8nu1jfesrk7qhr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB3Fluo8j8CEytVXjb3-mLfWgSTaiUc8Vs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>84754273921</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>xyz.trungnba.inspireme</string>
+	<key>PROJECT_ID</key>
+	<string>inspireme-7da8f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>inspireme-7da8f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:84754273921:ios:766f6548c522ecb6</string>
+	<key>DATABASE_URL</key>
+	<string>https://inspireme-7da8f.firebaseio.com</string>
+</dict>
+</plist>

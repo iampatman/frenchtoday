@@ -36,7 +36,7 @@ class DataManager {
 	func getRandomWord() -> Word {
 		var word = Word()
 		word.word = "Lundi"
-		word.meaning = "MondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMondayMonday"
+		word.meaning = "Laughter is the sensation of feeling good all over and showing it principally in one place."
 		return word;
 	}
 	
