@@ -24,6 +24,10 @@ class SettingViewController: UITableViewController {
 		savedMsgView.addSubview(savedMsgLabel)
 		self.tableView.addSubview(savedMsgView)
 		self.tableView.bringSubview(toFront: savedMsgView)
+		
+		self.selectedInterval = UserDefaults.standard.integer(forKey: "kRefreshingRate")
+		tableView.cellForRow(at: IndexPath(row: self.selectedInterval, section: 0))?.accessoryType = .checkmark
+		tableView.rectForRow(at: IndexPath(row: self.selectedInterval, section: 0))
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -49,6 +53,7 @@ class SettingViewController: UITableViewController {
 			let selectedIP = IndexPath(row: selectedInterval, section: 0)
 			tableView.cellForRow(at: selectedIP)?.accessoryType = .none
 			selectedInterval = indexPath.row
+			UserDefaults.standard.set(selectedInterval, forKey: "kRefreshingRate")
 		}
 		UIView.animate(withDuration: 0.5) {
 			tableView.deselectRow(at: indexPath, animated: true)

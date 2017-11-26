@@ -7,12 +7,12 @@
 		<key>FrenchToday.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>13</integer>
 		</dict>
 		<key>FrenchTodayWidget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>14</integer>
 		</dict>
 	</dict>
 </dict>

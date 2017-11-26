@@ -10,6 +10,8 @@
 		2A17037B1FC9D52000CA222D /* WidgetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17037A1FC9D52000CA222D /* WidgetContent.swift */; };
 		2A17037D1FC9D6CB00CA222D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17037C1FC9D6CB00CA222D /* SettingViewController.swift */; };
 		2A17037F1FC9F63100CA222D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A17037E1FC9F63000CA222D /* GoogleService-Info.plist */; };
+		2A35A96A1FCA6CD400CCC0FD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54AC1FC30FF000208DFC /* Word.swift */; };
+		2A35A96C1FCA6EFF00CCC0FD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54AE1FC3103000208DFC /* DataManager.swift */; };
 		2A8D54851FC30E9300208DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54841FC30E9300208DFC /* AppDelegate.swift */; };
 		2A8D54871FC30E9300208DFC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54861FC30E9300208DFC /* DetailViewController.swift */; };
 		2A8D548A1FC30E9300208DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D54881FC30E9300208DFC /* Main.storyboard */; };
@@ -19,8 +21,6 @@
 		2A8D54A01FC30EE200208DFC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D549F1FC30EE200208DFC /* TodayViewController.swift */; };
 		2A8D54A31FC30EE200208DFC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D54A11FC30EE200208DFC /* MainInterface.storyboard */; };
 		2A8D54A71FC30EE200208DFC /* FrenchTodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A8D549A1FC30EE100208DFC /* FrenchTodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2A8D54AD1FC30FF000208DFC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54AC1FC30FF000208DFC /* Word.swift */; };
-		2A8D54AF1FC3103000208DFC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54AE1FC3103000208DFC /* DataManager.swift */; };
 		6EDF9FDB914DEDE4CD922FEA /* Pods_FrenchToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5981093C232EDBBFA9C72617 /* Pods_FrenchToday.framework */; };
 		D876134931FC286A52373234 /* Pods_FrenchTodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4610495B229273DD30CE70 /* Pods_FrenchTodayWidget.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +56,8 @@
 		2A17037A1FC9D52000CA222D /* WidgetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContent.swift; sourceTree = "<group>"; };
 		2A17037C1FC9D6CB00CA222D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2A17037E1FC9F63000CA222D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A35A9671FCA696700CCC0FD /* FrenchToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrenchToday.entitlements; sourceTree = "<group>"; };
+		2A35A9681FCA69B900CCC0FD /* FrenchTodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrenchTodayWidget.entitlements; sourceTree = "<group>"; };
 		2A8D54811FC30E9300208DFC /* FrenchToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8D54841FC30E9300208DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8D54861FC30E9300208DFC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +132,11 @@
 		2A8D54831FC30E9300208DFC /* FrenchToday */ = {
 			isa = PBXGroup;
 			children = (
+				2A35A9671FCA696700CCC0FD /* FrenchToday.entitlements */,
 				2A17037E1FC9F63000CA222D /* GoogleService-Info.plist */,
 				2A8D54841FC30E9300208DFC /* AppDelegate.swift */,
+				2A8D54AE1FC3103000208DFC /* DataManager.swift */,
+				2A8D54AC1FC30FF000208DFC /* Word.swift */,
 				2A8D54861FC30E9300208DFC /* DetailViewController.swift */,
 				2A17037C1FC9D6CB00CA222D /* SettingViewController.swift */,
 				2A8D54881FC30E9300208DFC /* Main.storyboard */,
@@ -155,11 +160,10 @@
 		2A8D549E1FC30EE200208DFC /* FrenchTodayWidget */ = {
 			isa = PBXGroup;
 			children = (
+				2A35A9681FCA69B900CCC0FD /* FrenchTodayWidget.entitlements */,
 				2A8D549F1FC30EE200208DFC /* TodayViewController.swift */,
 				2A8D54A11FC30EE200208DFC /* MainInterface.storyboard */,
 				2A8D54A41FC30EE200208DFC /* Info.plist */,
-				2A8D54AC1FC30FF000208DFC /* Word.swift */,
-				2A8D54AE1FC3103000208DFC /* DataManager.swift */,
 				2A17037A1FC9D52000CA222D /* WidgetContent.swift */,
 			);
 			path = FrenchTodayWidget;
@@ -222,10 +226,20 @@
 					2A8D54801FC30E9300208DFC = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2A8D54991FC30EE100208DFC = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -311,12 +325,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FrenchToday/Pods-FrenchToday-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +395,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8D54871FC30E9300208DFC /* DetailViewController.swift in Sources */,
+				2A35A96C1FCA6EFF00CCC0FD /* DataManager.swift in Sources */,
+				2A35A96A1FCA6CD400CCC0FD /* Word.swift in Sources */,
 				2A8D54851FC30E9300208DFC /* AppDelegate.swift in Sources */,
 				2A17037D1FC9D6CB00CA222D /* SettingViewController.swift in Sources */,
 			);
@@ -376,8 +408,6 @@
 			files = (
 				2A8D54A01FC30EE200208DFC /* TodayViewController.swift in Sources */,
 				2A17037B1FC9D52000CA222D /* WidgetContent.swift in Sources */,
-				2A8D54AD1FC30FF000208DFC /* Word.swift in Sources */,
-				2A8D54AF1FC3103000208DFC /* DataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +562,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FrenchToday/FrenchToday.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBEVMP5SLB;
 				INFOPLIST_FILE = FrenchToday/Info.plist;
@@ -550,6 +581,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FrenchToday/FrenchToday.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBEVMP5SLB;
 				INFOPLIST_FILE = FrenchToday/Info.plist;
@@ -566,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEAF6A9DC0270F346E9D4C48 /* Pods-FrenchTodayWidget.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FrenchTodayWidget/FrenchTodayWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBEVMP5SLB;
 				INFOPLIST_FILE = FrenchTodayWidget/Info.plist;
@@ -582,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AEFBBB2F11ECAE3F9777CC5 /* Pods-FrenchTodayWidget.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FrenchTodayWidget/FrenchTodayWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBEVMP5SLB;
 				INFOPLIST_FILE = FrenchTodayWidget/Info.plist;

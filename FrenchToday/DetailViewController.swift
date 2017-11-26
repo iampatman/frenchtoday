@@ -16,20 +16,30 @@ class DetailViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		// Do any additional setup after loading the view, typically from a nib.
+		NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.receivedUserDefaultUpdate), name: UserDefaults.didChangeNotification, object: nil)
+		content.text = getContentFromUD()
+
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 
+	func getContentFromUD()-> String {
+		let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
+		guard let text = sharedDefaults?.string(forKey: "kCurrentQuote") else {
+			return ""
+		}
+		return text
+	}
+	
+	
+	@objc func receivedUserDefaultUpdate(){
+		self.content.text = getContentFromUD()
+	}
 	
 	@IBAction func refreshManually(){
-		UIView.animate(withDuration: 0.3) {
-			self.content.text = "Your resized app icons for iOS and Android are attached with this email; I hope you like it."
-		}
+		DataManager.getInstance().getNewQuote()
 	}
 
 }
