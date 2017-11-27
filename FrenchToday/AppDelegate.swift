@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 
 		FirebaseApp.configure()
-        let dataManager = DataManager.getInstance()
 
 		if UserDefaults.standard.object(forKey: "kRefreshingRate") == nil {
 			UserDefaults.standard.set(0, forKey: "kRefreshingRate")
 
 		}
 		let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
-        sharedDefaults?.removeObject(forKey: "kCurrentQuote")
+//        sharedDefaults?.removeObject(forKey: "kCurrentQuote")
+        let dataManager = DataManager.getInstance()
 		print(sharedDefaults?.string(forKey: "kCurrentQuote"))
 		return true
 	}

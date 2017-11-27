@@ -27,8 +27,8 @@ class DataManager {
 		initFirestore()
         self.selectedInterval = UserDefaults.standard.integer(forKey: "kRefreshingRate")
         let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
-
-        guard sharedDefaults?.string(forKey: "kRefreshingRate") != nil else {
+        let text = sharedDefaults?.string(forKey: "kCurrentQuote")
+        guard sharedDefaults?.string(forKey: "kCurrentQuote") != nil else {
             sharedDefaults?.set("Our greatest weapon against stress is our ability to choose one thought over another.", forKey: "kCurrentQuote")
             return;
         }
