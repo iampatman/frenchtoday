@@ -15,19 +15,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+
 		FirebaseApp.configure()
+        let dataManager = DataManager.getInstance()
+
 		if UserDefaults.standard.object(forKey: "kRefreshingRate") == nil {
 			UserDefaults.standard.set(0, forKey: "kRefreshingRate")
 
 		}
-		let dataManager = DataManager.getInstance()
 		let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
+        sharedDefaults?.removeObject(forKey: "kCurrentQuote")
 		print(sharedDefaults?.string(forKey: "kCurrentQuote"))
-	
 		return true
 	}
 
+	func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        DataManager.getInstance().getNewQuote {
+            completionHandler(.newData)
+        }
+        
+	}
+	
 	func applicationWillResignActive(_ application: UIApplication) {
 
 	}

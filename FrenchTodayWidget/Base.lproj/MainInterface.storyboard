@@ -20,6 +20,7 @@
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zn-YL-MH3">
                                 <rect key="frame" x="16" y="3" width="288" height="102"/>
+                                <gestureRecognizers/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">If you don't want to subscribe directly from us, you can also get access through Mashape. Click the button below to visit our API at Mashape and</string>
@@ -30,6 +31,9 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NGg-Q6-P1O" appends="YES" id="V0e-1O-et8"/>
+                                </connections>
                             </label>
                         </subviews>
                         <constraints>
@@ -48,6 +52,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NGg-Q6-P1O">
+                    <connections>
+                        <action selector="tap:" destination="M4Y-Lb-cyx" id="EwU-Ep-ay3"/>
+                        <outlet property="delegate" destination="6Zn-YL-MH3" id="HP5-ze-aKi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="56" y="58.47076461769116"/>
         </scene>

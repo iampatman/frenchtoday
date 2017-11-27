@@ -17,29 +17,30 @@ class DetailViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.receivedUserDefaultUpdate), name: UserDefaults.didChangeNotification, object: nil)
-		content.text = getContentFromUD()
-
 	}
 
+    override func viewWillAppear(_ animated: Bool) {
+        content.text = getContent()
+    }
+    
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 
-	func getContentFromUD()-> String {
-		let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
-		guard let text = sharedDefaults?.string(forKey: "kCurrentQuote") else {
-			return ""
-		}
-		return text
+	func getContent()-> String {
+		return DataManager.getInstance().getCurrentQuote()
+
 	}
 	
 	
 	@objc func receivedUserDefaultUpdate(){
-		self.content.text = getContentFromUD()
+        DispatchQueue.main.async {
+            self.content.text = self.getContent()
+        }
 	}
 	
 	@IBAction func refreshManually(){
-		DataManager.getInstance().getNewQuote()
+		DataManager.getInstance().getNewQuote(completionHandler: nil)
 	}
 
 }

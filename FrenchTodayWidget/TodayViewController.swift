@@ -11,6 +11,15 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
 	
+	@IBAction func tap(_ sender: Any) {
+		print("tapGesture12132Action")
+		doLaunchApp()
+
+	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadCurrentQuote()
+    }
 	@IBOutlet weak var meaning: UILabel!
 	var content: String? {
 		didSet {
@@ -20,19 +29,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		}
 	}
 	
+    
+    func loadCurrentQuote(){
+        let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
+        guard let text = sharedDefaults?.string(forKey: "kCurrentQuote") else {
+            self.content = "Not loaded"
+            return
+        }
+        self.content = text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		extensionContext?.widgetLargestAvailableDisplayMode = .compact
-		let sharedDefaults = UserDefaults(suiteName: "group.trungnba.TodayExtensionSharingDefaults")
-		guard let text = sharedDefaults?.string(forKey: "kCurrentQuote") else {
-			self.content = "Not loaded"
-			return
-		}
-		self.content = text
 		
-		let tapGesture = UIGestureRecognizer(target: self, action: #selector(TodayViewController.tapGestureAction))
-		self.meaning.isUserInteractionEnabled = true
-		self.meaning.addGestureRecognizer(tapGesture)
+		
+//        let tapGesture = UIGestureRecognizer(target: self, action: #selector(TodayViewController.tapGestureAction))
+//        self.meaning.isUserInteractionEnabled = true
+//        self.meaning.addGestureRecognizer(tapGesture)
+		
     }
 	
 	@objc func tapGestureAction(){

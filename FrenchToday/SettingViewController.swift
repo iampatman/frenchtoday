@@ -18,18 +18,21 @@ class SettingViewController: UITableViewController {
     }
 
 	func subViews(){
-		let savedMsgView = UIView(frame: CGRect(x: 0, y: self.tableView.bounds.maxY - 100, width: self.tableView.bounds.maxX, height: 20))
-		let savedMsgLabel = UILabel(frame: savedMsgView.frame)
-		savedMsgLabel.text = "Saved settings successfully"
-		savedMsgView.addSubview(savedMsgLabel)
-		self.tableView.addSubview(savedMsgView)
-		self.tableView.bringSubview(toFront: savedMsgView)
-		
+//		let savedMsgView = UIView(frame: CGRect(x: 0, y: self.tableView.bounds.maxY - 100, width: self.tableView.bounds.maxX, height: 20))
+//		let savedMsgLabel = UILabel(frame: savedMsgView.frame)
+//		savedMsgLabel.text = "Saved settings successfully"
+//		savedMsgView.addSubview(savedMsgLabel)
+//		self.tableView.addSubview(savedMsgView)
+//		self.tableView.bringSubview(toFront: savedMsgView)
 		self.selectedInterval = UserDefaults.standard.integer(forKey: "kRefreshingRate")
-		tableView.cellForRow(at: IndexPath(row: self.selectedInterval, section: 0))?.accessoryType = .checkmark
-		tableView.rectForRow(at: IndexPath(row: self.selectedInterval, section: 0))
+
 	}
 	
+	
+	override func viewDidAppear(_ animated: Bool) {
+		print("selectedInterval \(self.selectedInterval)")
+		tableView.cellForRow(at: IndexPath(row: self.selectedInterval, section: 0))?.accessoryType = .checkmark
+	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,6 +51,7 @@ class SettingViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		print("indexPath section: \(indexPath.section) row: \(indexPath.row)")
 		if (indexPath.section == 0 && indexPath.row != selectedInterval){
 			tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
 			let selectedIP = IndexPath(row: selectedInterval, section: 0)
