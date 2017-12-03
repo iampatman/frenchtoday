@@ -7,7 +7,8 @@ target 'FrenchToday' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Database'
-
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
   # Pods for FrenchToday
 
 end

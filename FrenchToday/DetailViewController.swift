@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 
 class DetailViewController: UIViewController {
@@ -41,6 +42,7 @@ class DetailViewController: UIViewController {
 	
 	@IBAction func refreshManually(){
 		DataManager.getInstance().getNewQuote(forced: true, completionHandler: nil)
+//		Crashlytics.sharedInstance().crash()
 	}
 
 }
