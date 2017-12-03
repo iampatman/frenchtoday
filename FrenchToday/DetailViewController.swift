@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
 	}
 	
 	@IBAction func refreshManually(){
-		DataManager.getInstance().getNewQuote(completionHandler: nil)
+		DataManager.getInstance().getNewQuote(forced: true, completionHandler: nil)
 	}
 
 }

@@ -83,11 +83,15 @@ class DataManager {
         return nextUpdate.compare(Date()) == ComparisonResult.orderedAscending
 
     }
-    
-    func getNewQuote(completionHandler: (() -> Void)?){
-        guard needToUpdate() == true else {
-            return
-        }
+	
+	
+	
+	func getNewQuote(forced: Bool = false, completionHandler: (() -> Void)? ){
+		if !forced {
+        	guard needToUpdate() == true else {
+            	return
+        	}
+		}
 		guard words.count > 0 else {
 			return
 		}
