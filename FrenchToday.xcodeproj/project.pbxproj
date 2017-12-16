@@ -12,6 +12,7 @@
 		2A17037F1FC9F63100CA222D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A17037E1FC9F63000CA222D /* GoogleService-Info.plist */; };
 		2A35A96A1FCA6CD400CCC0FD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54AC1FC30FF000208DFC /* Word.swift */; };
 		2A35A96C1FCA6EFF00CCC0FD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54AE1FC3103000208DFC /* DataManager.swift */; };
+		2A7177F71FE3BB7E006B818B /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7177F61FE3BB7E006B818B /* View+Extension.swift */; };
 		2A8D54851FC30E9300208DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54841FC30E9300208DFC /* AppDelegate.swift */; };
 		2A8D54871FC30E9300208DFC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D54861FC30E9300208DFC /* DetailViewController.swift */; };
 		2A8D548A1FC30E9300208DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D54881FC30E9300208DFC /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		2A17037E1FC9F63000CA222D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A35A9671FCA696700CCC0FD /* FrenchToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrenchToday.entitlements; sourceTree = "<group>"; };
 		2A35A9681FCA69B900CCC0FD /* FrenchTodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FrenchTodayWidget.entitlements; sourceTree = "<group>"; };
+		2A7177F61FE3BB7E006B818B /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2A8D54811FC30E9300208DFC /* FrenchToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8D54841FC30E9300208DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8D54861FC30E9300208DFC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				2A8D548B1FC30E9300208DFC /* Assets.xcassets */,
 				2A8D548D1FC30E9300208DFC /* LaunchScreen.storyboard */,
 				2A8D54901FC30E9300208DFC /* Info.plist */,
+				2A7177F61FE3BB7E006B818B /* View+Extension.swift */,
 			);
 			path = FrenchToday;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				2A35A96C1FCA6EFF00CCC0FD /* DataManager.swift in Sources */,
 				2A35A96A1FCA6CD400CCC0FD /* Word.swift in Sources */,
 				2A8D54851FC30E9300208DFC /* AppDelegate.swift in Sources */,
+				2A7177F71FE3BB7E006B818B /* View+Extension.swift in Sources */,
 				2A17037D1FC9D6CB00CA222D /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

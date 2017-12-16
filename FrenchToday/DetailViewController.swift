@@ -41,6 +41,7 @@ class DetailViewController: UIViewController {
 	}
 	
 	@IBAction func refreshManually(){
+		self.content.shake()
 		DataManager.getInstance().getNewQuote(forced: true, completionHandler: nil)
 //		Crashlytics.sharedInstance().crash()
 	}
